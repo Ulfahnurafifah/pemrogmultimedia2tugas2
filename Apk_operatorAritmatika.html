@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OperatorAritmatika_JavaScript</title>
+</head>
+
+<body style="background-color:rgba(59, 93, 167, 0.63);"> </body>
+
+<style> 
+    img {
+        border-radius: 50%;
+        } 
+  </style>
+
+<body>
+   <center> 
+    <tr>
+        <td><img src="aritmatika.jpg" width = "100"  alt="Foto Profil"></td>
+        <td>
+          
+    <h1> Aplikasi Operator Aritmatika </h1> </center> 
+
+  <p><em> 
+    <tr> <td>Ulfah Nurafifah</td> </tr>
+    <tr> <td>: 0402201046</td> </tr>
+</em></p></td>
+
+<hr> 
+<body>
+  <label for="angka1">Angka 1:</label>
+  <input type="number" id="angka1">
+<p
+  <label for="angka2">Angka 2:</label>
+  <input type="number" id="angka2"> </p>
+
+  <button onclick="hitung()"> <strong>Hitung</strong></button>
+
+  <p id="hasil">Hasil :</p>
+
+  <script>
+    // Fungsi untuk operator aritmatika
+    function hitung() {
+      // Mengambil nilai dari input
+      let angka1 = parseFloat(document.getElementById('angka1').value);
+      let angka2 = parseFloat(document.getElementById('angka2').value);
+
+      // Penjumlahan
+      let hasilTambah = angka1 + angka2;
+
+      // Pengurangan
+      let hasilKurang = angka1 - angka2;
+
+      // Perkalian
+      let hasilKali = angka1 * angka2;
+
+      // Pembagian
+      let hasilBagi = angka1 / angka2;
+
+      // Modulus (Sisa pembagian)
+      let hasilModulus = angka1 % angka2;
+
+      // Pangkat
+      let hasilPangkat = angka1 ** angka2;
+
+      // Menampilkan hasil di elemen dengan id 'hasil'
+  
+      document.getElementById('hasil').innerHTML = `
+      Hasil : <br>
+         Penjumlahan    : ${hasilTambah}<br>
+         Pengurangan    : ${hasilKurang}<br>
+         Perkalian      : ${hasilKali}<br>
+         Pembagian      : ${hasilBagi}<br>
+         Sisa Pembagian : ${hasilModulus}<br>
+         Pangkat        : ${hasilPangkat}
+      `;
+    }
+  </script>
+</body>
+</html>

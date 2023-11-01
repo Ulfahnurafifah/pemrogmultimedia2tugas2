@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deret Bilangan </title>
+</head>
+
+<style>
+    body {
+        align-content: center;
+      border: 2px solid #030303; /* Menambahkan garis tepi untuk aplikasi */
+      padding: 20px; /* Menambahkan ruang di dalam garis tepi */
+      max-width: 600px; /* Mengatur lebar maksimum aplikasi */
+      margin: 0 auto; /* Memusatkan aplikasi */
+    }
+  </style>
+
+<body background = "img/w1.webp" >
+
+  <body>
+    <p><u><em> <strong>
+      <tr> <td>Ulfah Nurafifah</td> </tr>
+      <tr> <td>: 0402201046</td> </tr> </strong>
+  </em></u></p>
+
+<center> 
+<body>
+  <u><h2>Deret Bilangan Ganjil/Genap</h2></u>
+
+  <label for="inputN">Masukkan nilai N:</label>
+  <input type="number" id="inputN" placeholder="Masukkan nilai N">
+<p> 
+  <button onclick="tampilkanDeret()">Tampilkan Deret</button>
+</p>
+<hr>
+<hr>
+
+  <div id="hasilDeret" style="display: flex;"></div>
+
+  <script>
+    function tampilkanDeret() {
+      // Mengambil nilai N dari input
+      let nilaiN = parseInt(document.getElementById('inputN').value);
+
+      // Mendapatkan elemen hasilDeret
+      let hasilDeretElem = document.getElementById('hasilDeret');
+      hasilDeretElem.innerHTML = ''; // Mengosongkan hasil sebelumnya
+
+      // Membuat objek untuk menampung daftar ganjil dan genap
+      let daftarGanjil = [];
+      let daftarGenap = [];
+
+      // Menampilkan deret bilangan ganjil atau genap hingga N
+      for (let i = 1; i <= nilaiN; i++) {
+        let listItem = document.createElement('div');
+        listItem.textContent = i;
+        listItem.style.flex = '1'; // Membagi ruang secara proporsional antara kedua kolom
+        listItem.style.margin = '5px'; // Menambahkan ruang di sekitar kolom
+
+        if (i % 2 === 0) {
+          // Genap
+          daftarGenap.push(listItem);
+        } else {
+          // Ganjil
+          daftarGanjil.push(listItem);
+        }
+      }
+
+      // Menambahkan daftar ganjil dan genap ke dalam hasilDeretElem
+      hasilDeretElem.appendChild(createGroup('Ganjil', daftarGanjil));
+      hasilDeretElem.appendChild(createGroup('Genap', daftarGenap));
+    }
+
+    // Fungsi untuk membuat grup dengan judul dan daftar elemen
+    function createGroup(title, list) {
+      let groupContainer = document.createElement('div');
+      let groupTitle = document.createElement('h3');
+      groupTitle.textContent = title;
+      groupTitle.style.marginBottom = '10px'; // Menambahkan jarak antara judul dan daftar
+      groupContainer.appendChild(groupTitle);
+
+      let groupList = document.createElement('ul');
+      groupList.style.listStyleType = 'none'; // Menghilangkan bullets pada daftar
+     
+      list.forEach(item => {
+        groupList.appendChild(item);
+      });
+
+      groupContainer.appendChild(groupList);
+      return groupContainer;
+    }
+  </script>
+
+</body>
+</center>
+</html>

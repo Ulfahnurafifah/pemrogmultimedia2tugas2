@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengecekan Bilangan Genap/Ganjil</title>
+</head>
+
+
+<style>
+    body {
+        align-content: center;
+        background-color: rgba(236, 217, 130, 0.733);
+      border: 2px solid #030303; /* Menambahkan garis tepi untuk aplikasi */
+      padding: 20px; /* Menambahkan ruang di dalam garis tepi */
+      max-width: 600px; /* Mengatur lebar maksimum aplikasi */
+      margin: 0 auto; /* Memusatkan aplikasi */
+    }
+  </style>
+
+
+
+<p><em> <strong>
+  <tr> <td>Ulfah Nurafifah</td> </tr>
+  <tr> <td>: 0402201046</td> </tr> </strong>
+  <hr>
+</em></p>
+<center>
+<body>
+ 
+   <h2>Pengecekan Angka Genap/Ganjil</h2> 
+  <hr>
+  <hr>
+  <label for="inputBilangan">Masukkan Bilangan :</label>
+  <input type="number" id="inputBilangan" placeholder="Masukkan bilangan bulat">
+
+  <button onclick="cekGenapGanjil()">Cek</button>
+
+  <p id="hasilCek"></p>
+
+  <script>
+    function cekGenapGanjil() {
+      // Mengambil nilai dari input
+      let bilangan = parseInt(document.getElementById('inputBilangan').value);
+
+      // Pengecekan bilangan genap atau ganjil
+      let hasilCek = (bilangan % 2 === 0) ? 'Genap' : 'Ganjil';
+
+      // Menampilkan hasil di elemen dengan id 'hasilCek'
+      document.getElementById('hasilCek').innerText = `Bilangan ${bilangan} adalah  Bilangan ${hasilCek}.`;
+    }
+  </script>
+
+</body> </center>
+</html>

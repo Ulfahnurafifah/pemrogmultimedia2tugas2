@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Gaji Karyawan</title>
+</head>
+
+<body background = "bg.webp" >
+
+<body>
+  <p><em> <strong>
+    <tr> <td>Ulfah Nurafifah<td> </tr>
+    <tr> <td>: 0402201046</td> </tr> </strong>
+</em></p>
+
+  <center> <h1>Formulir Gaji Karyawan</h1> </center>
+<hr>
+  <form id="gajiForm">
+    <label for="namaKaryawan">Nama Karyawan:</label>
+    <input type="text" id="namaKaryawan" required>
+  <p>
+    <label for="gajiPokok">Gaji Pokok Bulanan (IDR):</label>
+    <input type="number" id="gajiPokok" required>
+  </p>
+    <button type="button" onclick="hitungGaji()">Hitung Gaji</button>
+  </form>
+
+  <div id="hasilGaji"></div>
+
+  <script>
+    function hitungGaji() {
+      // Mengambil nilai dari formulir
+      let namaKaryawan = document.getElementById('namaKaryawan').value;
+      let gajiPokok = parseFloat(document.getElementById('gajiPokok').value);
+
+      // Menghitung tunjangan (20% dari gaji pokok)
+      let tunjangan = 0.2 * gajiPokok;
+
+      // Menghitung pajak (15% dari gaji pokok ditambah tunjangan)
+      let pajak = 0.15 * (gajiPokok + tunjangan);
+
+      // Menghitung gaji bersih
+      let gajiBersih = gajiPokok + tunjangan - pajak;
+
+       // Format Tunjangan sebagai Rupiah
+       let tunjanganRupiah = tunjangan.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+
+        // Format gaji bersih sebagai Rupiah
+      let pajakRupiah = pajak.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+
+      // Format gaji bersih sebagai Rupiah
+      let gajiBersihRupiah = gajiBersih.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+
+      // Menampilkan hasil di elemen dengan id 'hasilGaji'
+      document.getElementById('hasilGaji').innerHTML = `
+        <h3>Hasil Perhitungan Gaji</h3>
+        <p>Nama Karyawan: ${namaKaryawan}</p>
+        <p>Tunjangan  : ${tunjanganRupiah}</p>
+        <p>Pajak : ${pajakRupiah}</p>
+        <p>Gaji Bersih Bulanan: ${gajiBersihRupiah}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
